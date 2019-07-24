@@ -4,7 +4,6 @@
 -- WARNING: rows with is_na = 't' are known to have bad statistics ("name" type is not supported).
 -- This query is compatible with PostgreSQL 8.2 and after
 
-CREATE SCHEMA IF NOT EXISTS helper;
 
 CREATE VIEW helper.index_bloast as
 SELECT current_database(), nspname AS schemaname, tblname, idxname, bs*(relpages)::bigint AS real_size,
