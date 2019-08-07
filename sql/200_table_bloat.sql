@@ -5,6 +5,8 @@
 --  */
 
 
+DROP VIEW IF EXISTS helper.table_bloast;
+
 CREATE VIEW helper.table_bloast as
 SELECT current_database(), schemaname, tblname, bs*tblpages AS real_size,
   (tblpages-est_tblpages)*bs AS extra_size,

@@ -64,7 +64,7 @@ begin
       return false;
     else
       -- 递归调用，重试，传入参数重试次数+1.
-      return exchange_tab(nsp, from_tab, to_tab, mid_tab, timeout_s, retry, kill, sleepts, steps+1);
+      return helper.exchange_table(nsp, from_tab, to_tab, mid_tab, timeout_s, retry, kill, sleepts, steps+1);
     end if;
 end;
 $$ language plpgsql strict;

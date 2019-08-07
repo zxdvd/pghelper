@@ -5,6 +5,8 @@
 -- This query is compatible with PostgreSQL 8.2 and after
 
 
+DROP VIEW IF EXISTS helper.index_bloast;
+
 CREATE VIEW helper.index_bloast as
 SELECT current_database(), nspname AS schemaname, tblname, idxname, bs*(relpages)::bigint AS real_size,
   bs*(relpages-est_pages)::bigint AS extra_size,
